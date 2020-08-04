@@ -22,7 +22,9 @@ public class AfterThrowingDemoApp {
 		// call method to find the accounts
 		List<Account> theAccounts = null;
 		try {
-			theAccounts = theAccountDAO.findAccounts();
+			// add a boolean flag to simulate exceptions
+			boolean tripWire = true;
+			theAccounts = theAccountDAO.findAccounts(tripWire);
 		} catch (Exception e) {
 			System.out.println("\n\nMain Program... caught execpetion: " +e);
 		} 
